@@ -1,0 +1,18 @@
+Exam code for Q1
+n=int(input("Enter the length of array: "))
+a=[]
+print("Enter the values of array")
+for i in range(n):
+    a.append(int(input()))
+print('This is the array that you entered \n',a)
+for i in range(n):
+    c=0
+    for j in range(1,n-i):
+        if a[j]<a[j-1]:
+            a[j]=a[j]+a[j-1]
+            a[j-1]=a[j]-a[j-1]
+            a[j]=a[j]-a[j-1]
+            c+=1
+    if c==0:
+        break
+print("The sorted array is", a)

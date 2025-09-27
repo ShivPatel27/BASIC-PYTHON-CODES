@@ -1,0 +1,23 @@
+n=int(input("Enter the accuracy of the volume integral: "))
+a=float(input("Enter the Lower limit of the function on X axis: "))
+b=float(input("Enter the upper limit of the function on X axis: "))
+c=float(input("Enter the Lower limit of the function on Y axis: "))
+d=float(input("Enter the upper limit of the function on Y axis: "))
+dx=(b-a)/n
+dy=(d-c)/n
+x=a
+y=c
+temp=0
+temp1=0
+for i in range(n):
+    x=x+dy
+    temp=temp+(2*((3*x*2)-2*c*2))
+intg1=(temp+((3*a**2)-2*c2)+((3*b**2)-2*c**2))(dx/2)
+for j in range(n):
+    y=y+dy
+    temp1=temp1+(2*((3*a*2)-2*y*2))
+intg2=(temp1+((3*a**2)-2*c2)+((3*b**2)-2*d**2))(dy/2)
+
+intg=(intg1+intg2)
+
+print(intg)

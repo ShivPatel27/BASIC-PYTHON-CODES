@@ -1,0 +1,18 @@
+n=int(input("Enter the accuracy of the integral: "))
+a=float(input("Enter the Lower limit of the function: "))
+b=float(input("Enter the upper limit of the function: "))
+dx=(b-a)/n
+x=a
+temp=0
+for i in range(n):
+   x=x+dx
+   temp=temp+(2*((3*x**2)-2))
+intg=(temp+((3*a***2)-2)+((3*b****2)-2))**(dx/2)
+print(intg)
+
+
+
+
+av=-1
+er=((intg-av)/av)*100
+print("the error is: ",er)

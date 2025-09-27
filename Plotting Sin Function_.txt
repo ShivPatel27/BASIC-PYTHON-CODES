@@ -1,0 +1,16 @@
+#roots of the polynomial
+import math
+import matplotlib.pyplot as plt
+def f(x):
+    return(math.sin(x))
+n=int(input("give n: "))
+t=[]
+s=[]
+
+for i in range(-n,n):
+
+    t.append(0.1*i)
+    s.append(f(t[i+n]))
+
+plt.plot(t,s)
+plt.show()

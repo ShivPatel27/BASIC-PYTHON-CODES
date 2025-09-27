@@ -1,0 +1,106 @@
+import math
+import numpy as np
+A=[' ','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+B=[]
+string=str(input("Enter your message:"))
+n=26
+x=len(string)
+for i in range (x):
+    for j in range(n):
+        if string[i] == A[j]:
+            B.append(j)
+            break  
+        
+rx=math.sqrt(x)
+ix=int(math.sqrt(x))
+if (ix == rx):
+    matsize=ix
+else:
+    matsize=ix+1
+print(matsize)
+
+pmatrix=[]
+q=0
+for i in range(matsize):
+    row=[]
+    for j in range(matsize):
+        row.append(0)
+    pmatrix.append(row)
+
+p=0
+
+for i in range(matsize):
+    for j in range(matsize):
+        pmatrix[i][j]=B[q]
+        q=q+1
+        if q==x:
+            p=1
+            break
+    if p==1:
+        break
+        
+print('\n',pmatrix,'\n\n  This is the plain text \n')
+
+kmatrix=np.random.randint(100,size=(matsize,matsize))
+
+det = np.linalg.det(kmatrix)
+
+while det==0:
+    kmatrix=np.random.randint(100,size=(matsize,matsize))
+    det = np.linalg.det(kmatrix)
+    
+print(kmatrix,'\n\n This is the sender Key \n\n')
+
+cmatrix=[]
+
+for i in range(matsize):
+    row=[]
+    for j in range(matsize):
+            row.append(0)
+    cmatrix.append(row)
+    
+for i in range(matsize):
+    for j in range(matsize):
+        for k in range(matsize):
+            cmatrix[i][j]=cmatrix[i][j]+ pmatrix[i][k]*kmatrix[k][j]
+
+print(cmatrix,"\n\n This is the ciphered text, You send them this\n")
+
+ikmatrix=np.linalg.inv(kmatrix)
+
+print(ikmatrix,"\n\n This is the reciever key \n")
+
+mematrix=[]
+
+for i in range(matsize):
+    row=[]
+    for j in range(matsize):
+            row.append(0)
+    mematrix.append(row)
+
+for i in range(matsize):
+    for j in range(matsize):
+        for k in range(matsize):
+            mematrix[i][j]=int(round(mematrix[i][j]+ cmatrix[i][k]*ikmatrix[k][j]))
+            
+print('\n\n', mematrix,"\n\n")
+B=[]            
+
+for i in range(matsize):
+    for j in range(matsize):
+        B.append(mematrix[i][j])
+        
+r=matsize*matsize
+
+message=[]
+
+for i in range (r):
+    for j in range(n):
+        if B[i] == j:
+            message.append(A[j])
+            break 
+            
+
+            
+
+print(message)

@@ -1,0 +1,9 @@
+n=str(input("Enter the ERP no.: "))
+x=len(n)
+if x==11 or n[0:7]=="E113223":e
+    if(int(n[7:11])>=8 and int(n[7:11])<=1394):
+        print("You belong to me, hahaha")
+    else:
+        print("Go to your class and study also you are retarded")
+else:
+    print("INVALID INPUT- Enter Again")

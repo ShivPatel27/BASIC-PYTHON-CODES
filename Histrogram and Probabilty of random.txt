@@ -1,0 +1,25 @@
+#random no. b/w 3,5
+import matplotlib.pyplot as plt
+import random as rn
+n=int(input("give n: "))
+r=[]
+for i in range(n):
+    x=rn.randrange(3,5)
+    y=rn.random()
+    z=x+y
+    r.append(z)
+    print()
+plt.hist(r,bins=10,edgecolor="red")
+plt.show()
+
+
+#Gaussian Function
+import matplotlib.pyplot as plt
+import random as rn
+n=int(input("give n: "))
+r=[]
+for i in range(n):
+    r.append(rn.gauss(0,1))
+#    print(x)
+plt.hist(r,bins=10)
+plt.show()

@@ -1,0 +1,15 @@
+n=int(input("Enter the power of the polynomial"))
+A=[]
+for i in range(n+1):
+    row=[]
+    for j in range(i+1):
+        if j==i or j==0:
+            row.append(1)
+        else:
+            x=A[i-1][j-1]+A[i-1][j]
+            row.append(x)
+    A.append(row)
+for i in range(n+1):
+    for j in range(i+1):
+        print(A[i][j], end=" ")
+    print()

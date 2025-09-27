@@ -1,0 +1,45 @@
+print("Enter the values of vectors: ")
+A=[]
+B=[]
+C=[]
+D=[]
+for j in range(3):
+    A.append(int(input()))
+for j in range(3):
+    B.append(int(input()))
+
+print(A,B)
+x=0
+for j in range(3):
+    x=x+A[j]*B[j]
+C.append(x)
+print("The projection of Both vectors is ",C)
+C=[]
+for i in range(2):
+    row=[]
+    for j in range(3):
+        if i==0:
+            row.append(A[j])
+        if i==1:
+            row.append(B[j])
+    C.append(row)
+for i in range(2):
+    for j in range(3):
+        print(C[i][j],end=" ")
+    print()
+x=0
+for i in range(2):
+    for j in range(3):
+        if j==0 and i==0:
+            x=(C[i][j]*C[i+1][j+1])-(C[i][j+1]*C[i+1][j])
+            D.append(x)
+        if j==1 and i==0:
+            x=((C[i][j]*C[i+1][j+1])-(C[i][j+1]*C[i+1][j]))(-1)
+            D.append(x)
+        if j==2 and i==1:
+            x=(C[i-1][j-2]*C[i][j])-(C[i][j-2]*C[i-1][j])
+            D.append(x)
+            break
+print("Perpendicular vector of Both vectors is ",D)
+
+Program of Cross and Dot Product

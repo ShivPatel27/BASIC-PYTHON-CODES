@@ -1,0 +1,10 @@
+import random as r
+n=int(input("Enter the no. of random values you need: "))
+l=int(input("Enter the range between you want random no. :"))
+m=int(input("To "))
+print("The random values are: ")
+a=[]
+for i in range(n):
+    x=r.randrange(l,m)
+    a.append(x)
+print(a)

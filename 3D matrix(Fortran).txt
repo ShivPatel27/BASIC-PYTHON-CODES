@@ -1,0 +1,117 @@
+program Matrix
+        implicit none
+        integer::i,j,k,l,x,y,z
+        real,allocatable,dimension(:,:,:)::a,b,c
+        print*,"Give the no. of levels of the 3D matrix"
+        read(*,*)x
+        print*,"Give the no. of rows of the 3D matrix"
+        read(*,*)y
+        print*,"Give the no. of cols of the 3D matrix"
+        read(*,*)z
+        allocate(a(x,y,z))
+        allocate(b(x,y,z))
+        allocate(c(x,y,z))
+
+        print*,"Enter the values of 3-D Matrix A:"
+        do i=1,x
+        do j=1,y
+        do k=1,z
+        read(*,*)A(i,j,k)
+        end do
+        end do
+        end do
+
+        print*,"Enter the values of 3-D Matrix B:"
+        do i=1,x
+        do j=1,y
+        do k=1,z
+        read(*,*)B(i,j,k)
+        end do
+        end do
+        end do
+
+        print*,"3-D Matrix A:"
+        
+        do i=1,x
+        do j=1,y
+        print*,"",A(i,j,:)
+        end do
+        print*,""
+        end do
+        
+        
+        print*,"3-D Matrix B:"
+
+        do i=1,x
+        do j=1,y
+        print*,"",B(i,j,:)
+        end do
+        print*,""
+        end do
+        
+        print*,"Addition of the 3-D matrices is:"
+        do i=1,x
+        do j=1,y
+        do k=1,z
+        C(i,j,k)=A(i,j,k)+B(i,j,k)
+        end do
+        end do
+        end do
+
+        do i=1,x
+        do j=1,y
+        print*,"",C(i,j,:)
+        end do
+        print*,""
+        end do
+
+        print*,"Subtraction of the 3-D matrices is:"
+        do i=1,x
+        do j=1,y
+        do k=1,z
+        C(i,j,k)=A(i,j,k)-B(i,j,k)
+        end do
+        end do
+        end do
+
+        do i=1,x
+        do j=1,y
+        print*,"",C(i,j,:)
+        end do
+        print*,""
+        end do
+
+        if (x==y) then
+
+
+        do i=1,x
+        do j=1,y
+        do k=1,z
+        C(i,j,k)=0
+        end do
+        end do
+        end do
+        
+        print*,"Multiplication of the 3-D matrices is:"
+        
+        do i=1,x
+        do j=1,y
+        do k=1,z
+        do l=1,z
+        C(i,j,k)=C(i,j,k)+A(i,j,l)*B(i,l,k)
+        end do
+        end do
+        end do
+        end do
+
+        do i=1,x
+        do j=1,y
+        print*,"",C(i,j,:)
+        end do
+        print*,""
+        end do
+
+        else
+        print*,"Multiplicaiton Is not Possible"
+        end if
+end program Matrix

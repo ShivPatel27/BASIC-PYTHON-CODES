@@ -1,0 +1,19 @@
+n=int(input("enter the value of accuracy:"))
+a=int(input("Enter the lower limit of integral:"))
+b=int(input("enter the upper limit of integral:"))
+e=2.71828
+dx=((b-a)/n)
+intg=0
+m=[]
+for i in range (n):
+    m.append(a+((2*i+1)*dx)/2)
+    intg=intg+(m[i]**2)
+intg=dx*intg
+#print(m)
+print(intg)
+ext=(b**3-a**3)/3
+er=intg-ext
+if(er<0.0000000000):
+    er=er*(-1)
+er=(er/ext)*100
+print(er,ext)

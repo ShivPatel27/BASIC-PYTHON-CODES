@@ -1,0 +1,26 @@
+#Code to check the efficiency of an engine and if it follows the second law of thermodynamics
+print("Which Values do you want to provide? \n 1.Temperatures \n 2.Heats")
+a=int(input("Type 1 or 2 \n"))
+if a == 2:
+    q1=float(input("enter the Heat absorbed by the engine from source: "))
+    q2=float(input("enter the Heat released by the Engine to sink: "))
+    n=(1-(q2/q1))*100
+    print("the Efficiency of your engine is: ",n,"%")
+    if(n<100 and n>0):
+        print("Congratulations your engine will work perfectly fine! and I doesnt break Second law of Thermodynamics")
+    elif(n<0 or n>100):
+        print("Your engine breaks the second law of thermodynamics, It's impossible to make it work")
+    elif n==100:
+        print("Voila! You have achieved an Carnot engine")
+if a == 1:
+    t1=float(input("enter the Temp absorbed by the engine from source: "))
+    t2=float(input("enter the Temp released by the Engine to sink: "))
+    n=(1-(t2/t1))*100
+    print("the Efficiency of your engine is: ",n,"%")
+    if(n<100 and n>0):
+        print("Congratulations your engine will work perfectly fine! and I doesnt break Second law of Thermodynamics")
+    elif(n>100 or 0>n ):
+        print("Your engine breaks the second law of thermodynamics, It's impossible to make it work")
+    elif n==100:
+        print("Voila! You have achieved an Carnot engine")
+

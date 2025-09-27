@@ -1,0 +1,4 @@
+import random as r
+a=["head","tail"]
+x=r.choice(a)
+print(x)

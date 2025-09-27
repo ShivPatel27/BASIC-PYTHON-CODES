@@ -1,0 +1,18 @@
+m=int(input("enter the no. of rows of matrix 1: "))
+n=int(input("enter the no. of cols of matrix 1: "))
+
+A=[]
+print("enter the values of matrix rowwise")
+for i in range(m):
+    row=[]
+    for j in range(n):
+         row.append(int(input()))
+    A.append(row)
+
+print(A)
+for i in range(m):
+    for j in range(i,n):
+        x=A[j][i]
+        A[j][i]=A[i][j]
+        A[i][j]=x
+print(A)

@@ -1,0 +1,37 @@
+m=int(input("enter the no. of rows of matrix 1: "))
+n=int(input("enter the no. of cols of matrix 1: "))
+p=int(input("enter the no. of rows of matrix 2: "))
+q=int(input("enter the no. of cols of matrix 2: "))
+while m!=p or q!=n:
+    print("input again")
+    m=int(input("enter the no. of rows of matrix 1: "))
+    n=int(input("enter the no. of cols of matrix 1: "))
+    p=int(input("enter the no. of rows of matrix 2: "))
+    q=int(input("enter the no. of cols of matrix 2: "))
+A=[]
+B=[]
+C=[]
+print("enter the values of matrix 1 rowwise")
+for i in range(m):
+    row=[]
+    for j in range(n):
+         row.append(int(input()))
+    A.append(row)
+print("enter the values of matrix 2 rowwise")
+for i in range(p):
+    row=[]
+    for j in range(q):
+         row.append(int(input()))
+    B.append(row)
+for i in range(p):
+    row=[]
+    for j in range(q):
+         row.append(0)
+    C.append(row)   
+print(A)
+print(B)
+for i in range(m):
+    for j in range(n):
+        C[i][j]=A[i][j]+B[i][j]
+print("Addition of both matrix is :")
+print(C)

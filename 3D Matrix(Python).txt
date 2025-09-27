@@ -1,0 +1,110 @@
+l=int(input("level: "))
+m=int(input("row: "))
+n=int(input("cols : "))
+
+print("input values of 3D matrix - A: ")
+
+A=[]
+for i in range(l):
+    level=[]
+    for j in range(m):
+        row=[]
+        for k in range(n):
+            row.append(int(input()))
+        level.append(row)
+    A.append(level)
+
+print("input values of 3D matrix - B: ")
+
+B=[]
+for i in range(l):
+    level=[]
+    for j in range(m):
+        row=[]
+        for k in range(n):
+            row.append(int(input()))
+        level.append(row)
+    B.append(level)
+    
+print("\nthe 3D Matrix - A : \n")
+for i in range(l):
+    for j in range(m):
+        for k in range(n):
+            print(A[i][j][k],end=" ")
+        print()
+    print()
+    
+print("\nthe 3D Matrix - B :\n")
+
+for i in range(l):
+    for j in range(m):
+        for k in range(n):
+            print(B[i][j][k],end=" ")
+        print()
+    print()
+    
+C=[]
+for i in range(l):
+    level=[]
+    for j in range(m):
+        row=[]
+        for k in range(n):
+            row.append(0)
+        level.append(row)
+    C.append(level)
+    
+for i in range(l):
+    for j in range(m):
+        for k in range(n):
+            C[i][j][k]=A[i][j][k]+B[i][j][k]
+            
+print("Sum of both The 3-D Matrices is: \n") 
+
+for i in range(l):
+    for j in range(m):
+        for k in range(n):
+            print(C[i][j][k],end=" ")
+        print()
+    print()
+
+for i in range(l):
+    for j in range(m):
+        for k in range(n):
+            C[i][j][k]=A[i][j][k]-B[i][j][k]
+            
+print("Subtraction of both The 3-D Matrices is: \n") 
+
+for i in range(l):
+    for j in range(m):
+        for k in range(n):
+            print(C[i][j][k],end=" ")
+        print()
+    print()
+
+print("Multiplication of both The 3-D Matrices is: \n")
+
+for i in range(l):
+    level=[]
+    for j in range(m):
+        row=[]
+        for k in range(n):
+            row.append(1)
+        level.append(row)
+    C.append(level)
+
+
+
+for i in range(l):
+    for j in range(m):
+        for k in range(n):
+            for x in range(n):
+                C[i][j][k]=C[i][j][k]+A[i][j][x]*B[i][x][k]
+
+
+      
+for i in range(l):
+    for j in range(m):
+        for k in range(n):
+            print(C[i][j][k],end=" ")
+        print()
+    print()
